@@ -39,6 +39,16 @@ const AFTONBLADET = {
 }
 
 class Content extends React.Component {
+    componentDidMount() {
+        fetch('/')
+            .then(results => {
+                return results;
+            }).then(function (response) {
+                console.log("successful response");
+                console.log(response);
+            });
+    }
+
     render() {
         let contentStyle = {
             backgroundColor: "#FFDE00",
