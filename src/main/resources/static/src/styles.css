@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+}
+
+.image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+.mainHeader {
+    text-align: center;
+}
