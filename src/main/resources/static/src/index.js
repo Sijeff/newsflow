@@ -39,6 +39,20 @@ const AFTONBLADET = {
 }
 
 class Content extends React.Component {
+    componentDidMount() {
+        fetch('http://localhost:8080/', {
+            method: 'get',
+            mode: 'no-cors',
+        }).then(function (response) {
+            if (response.status !== 200) {
+                console.log("Something went wrong. Code: " + response.status);
+                return;
+            }
+            console.log("successful response");
+            console.log(response);
+        });
+    }
+
     render() {
         let contentStyle = {
             backgroundColor: "#FFDE00",
