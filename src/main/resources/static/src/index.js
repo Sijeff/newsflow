@@ -43,7 +43,7 @@ class Content extends React.Component {
     componentDidMount() {
         axios.get("http://localhost:8080/")
       .then(res => {
-        console.log(res);
+        console.log(res.data);
       })
     }
 
