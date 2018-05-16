@@ -9,11 +9,7 @@ import java.util.List;
 public class NewsPaper implements Observer, DisplayFeed {
 
     private String url;
-
-    public List<Item> getItems() {
-        return items;
-    }
-
+    private String name;
     private List<Item> items;
     private Subject newsFeed;
 
@@ -39,7 +35,20 @@ public class NewsPaper implements Observer, DisplayFeed {
     @Override
     public void display() {
         for (Item item : items) {
+            System.out.println(item.getDate());
             System.out.println();
         }
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
