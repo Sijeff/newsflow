@@ -9,6 +9,11 @@ import java.util.List;
 public class NewsPaper implements Observer, DisplayFeed {
 
     private String url;
+
+    public List<Item> getItems() {
+        return items;
+    }
+
     private List<Item> items;
     private Subject newsFeed;
 
@@ -34,9 +39,6 @@ public class NewsPaper implements Observer, DisplayFeed {
     @Override
     public void display() {
         for (Item item : items) {
-            System.out.println(item.getTitle());
-            System.out.println(item.getDescription());
-            System.out.println(item.getLink());
             System.out.println();
         }
     }
