@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import NewsContainer from "./newscontainer";
+import axios from 'axios';
 import "./styles.css";
 
 
@@ -40,17 +41,14 @@ const AFTONBLADET = {
 
 class Content extends React.Component {
     componentDidMount() {
-        fetch('http://localhost:8080/', {
-            method: 'get',
-            mode: 'no-cors',
-        }).then(function (response) {
-            if (response.status !== 200) {
-                console.log("Something went wrong. Code: " + response.status);
-                return;
-            }
-            console.log("successful response");
-            console.log(response);
-        });
+        axios.get({
+        baseURL: '/',
+        timeout: 10000,
+        withCredentials: true,
+        })
+      .then(res => {
+        console.log(res);
+      })
     }
 
     render() {
