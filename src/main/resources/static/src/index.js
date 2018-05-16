@@ -41,13 +41,9 @@ const AFTONBLADET = {
 
 class Content extends React.Component {
     componentDidMount() {
-        axios.get({
-        baseURL: '/',
-        timeout: 10000,
-        withCredentials: true,
-        })
+        axios.get("http://localhost:8080/")
       .then(res => {
-        console.log(res);
+        console.log(res.data);
       })
     }
 
