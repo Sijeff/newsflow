@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -16,12 +20,11 @@ html, body {
     position: relative;
     z-index: 10;
     height: 100px;
+    text-align: center;
 }
 
 .content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;  
     overflow: hidden;
     height: 100vh;
     margin-top: -100px;
@@ -38,18 +41,9 @@ html, body {
     padding: .5rem;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
+    flex: 1;
 }
 
 .column::-webkit-scrollbar {
     display: none;
-}
-
-.image {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-}
-
-.mainHeader {
-    text-align: center;
 }
