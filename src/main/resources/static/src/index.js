@@ -7,7 +7,7 @@ import "./styles.css";
 
 let destination = document.querySelector("#root");
 class Content extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -17,16 +17,16 @@ class Content extends React.Component {
             }
         }
     }
-    
+
     componentDidMount() {
         axios.get("http://localhost:8080/")
-      .then(res => {
-        this.setState({
-            newsPaper: res.data
-        })
-      })
+            .then(res => {
+                this.setState({
+                    newsPaper: res.data
+                })
+            })
     }
-    
+
 
     render() {
         console.log(this.state.newsPaper);
@@ -36,10 +36,16 @@ class Content extends React.Component {
         }
         return (
             <div className="main">
-                <h1 className="mainHeader">Nyhetsflöde</h1>
-                <div style={contentStyle} className="content">
-                    <NewsContainer newsPaper={this.state.newsPaper} />
-                    <NewsContainer newsPaper={this.state.newsPaper} />
+                <div className="header">
+                    <h1 className="mainHeader">Nyhetsflöde</h1>
+                    <div style={contentStyle} className="content">
+                        <div className="column">
+                            <NewsContainer newsPaper={this.state.newsPaper} />
+                        </div>
+                        <div className="column">
+                            <NewsContainer newsPaper={this.state.newsPaper} />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
