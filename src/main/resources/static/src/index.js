@@ -11,18 +11,19 @@ class Content extends React.Component {
         super(props);
 
         this.state = {
-            newsPaper: {
-                title: '',
-                items: [{}]
-            }
+            newspapers: [{
+                name: '',
+                items: []
+            }]
         }
     }
 
     componentDidMount() {
         axios.get("http://localhost:8080/")
             .then(res => {
+                console.log(res.data);
                 this.setState({
-                    newsPaper: res.data
+                    newspapers: res.data
                 })
             })
     }
@@ -31,20 +32,36 @@ class Content extends React.Component {
     render() {
         console.log(this.state.newsPaper);
         let contentStyle = {
-            backgroundColor: "#FFDE00",
             fontFamily: "monospace",
+        }
+        let oddStyle = {
+            backgroundColor: '#8FB2CF',
+        }
+        let evenStyle = {
+            backgroundColor: '#8DDBD5',
         }
         return (
             <div className="main">
                 <div className="header">
                     <h1 className="mainHeader">Nyhetsflöde</h1>
                     <div style={contentStyle} className="content">
-                        <div className="column">
-                            <NewsContainer newsPaper={this.state.newsPaper} />
-                        </div>
-                        <div className="column">
-                            <NewsContainer newsPaper={this.state.newsPaper} />
-                        </div>
+                        {this.state.newspapers.map(function (newspaper, i) {
+                            if(i % 2 === 0){
+                                return (
+                                    <div style={evenStyle} className="column" key={i}>
+                                        <NewsContainer newspaper={newspaper} key={i} />
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div style={oddStyle} className="column" key={i}>
+                                        <NewsContainer newspaper={newspaper} key={i} />
+                                    </div>
+                                )
+                            }
+                            
+                            
+                        })}
                     </div>
                 </div>
             </div>

@@ -25,6 +25,7 @@ public class MainController {
         NewsPaper aftonbladet = new NewsPaper("http://www.aftonbladet.se/rss.xml", newsFeed);
         aftonbladet.setName("Aftonbladet");
         NewsPaper svd = new NewsPaper("https://www.svd.se/?service=rss", newsFeed);
+        svd.setName("Svenska Dagbladet");
 
         newsFeed.notifyObservers();
 
