@@ -40,12 +40,23 @@ const AFTONBLADET = {
 }
 
 class Content extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            items: []
+        }
+    }
+    
     componentDidMount() {
         axios.get("http://localhost:8080/")
       .then(res => {
-        console.log(res.data);
+        this.setState({
+            items: res.data.items
+        })
       })
     }
+    
 
     render() {
         let contentStyle = {
@@ -56,8 +67,7 @@ class Content extends React.Component {
             <div className="main">
                 <h1 className="mainHeader">Nyhetsflöde</h1>
                 <div style={contentStyle} className="content">
-                    <NewsContainer source={EXPRESSEN.channel} />
-                    <NewsContainer source={AFTONBLADET.channel} />
+                    <NewsContainer items={this.state.items} />
                 </div>
             </div>
         );
