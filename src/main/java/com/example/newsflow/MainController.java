@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class MainController {
 
@@ -11,14 +14,26 @@ public class MainController {
 
     @GetMapping("/")
     @CrossOrigin(origins = "*")
-    public NewsPaper showSomething() {
+    public List<NewsPaper> showSomething() {
+
+        List<NewsPaper> newsPapers = new ArrayList<>();
 
         NewsFeed newsFeed = new NewsFeed();
+
         NewsPaper expressen = new NewsPaper("https://feeds.expressen.se/nyheter/", newsFeed);
         expressen.setName("Expressen");
+        NewsPaper aftonbladet = new NewsPaper("http://www.aftonbladet.se/rss.xml", newsFeed);
+        aftonbladet.setName("Aftonbladet");
+        NewsPaper svd = new NewsPaper("https://www.svd.se/?service=rss", newsFeed);
+
         newsFeed.notifyObservers();
 
-        return expressen;
+        newsPapers.add(expressen);
+        newsPapers.add(aftonbladet);
+        newsPapers.add(svd);
+
+
+        return newsPapers;
     }
 
 
