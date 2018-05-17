@@ -39,6 +39,7 @@ class Content extends React.Component {
                 <h1 className="mainHeader">Nyhetsflöde</h1>
                 <div style={contentStyle} className="content">
                     <NewsContainer newsPaper={this.state.newsPaper} />
+                    <NewsContainer newsPaper={this.state.newsPaper} />
                 </div>
             </div>
         );
