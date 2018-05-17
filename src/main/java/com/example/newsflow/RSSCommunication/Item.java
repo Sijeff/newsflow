@@ -7,6 +7,7 @@ public class Item {
     String link;
     String author;
     String guid;
+    String date;
 
     public String getTitle() {
         return title;
@@ -46,6 +47,14 @@ public class Item {
 
     public void setGuid(String guid) {
         this.guid = guid;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override

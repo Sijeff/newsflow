@@ -15,6 +15,7 @@ public class MainController {
 
         NewsFeed newsFeed = new NewsFeed();
         NewsPaper expressen = new NewsPaper("https://feeds.expressen.se/nyheter/", newsFeed);
+        expressen.setName("Expressen");
         newsFeed.notifyObservers();
 
         return expressen;
