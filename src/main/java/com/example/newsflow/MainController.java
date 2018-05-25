@@ -32,6 +32,8 @@ public class MainController {
         newsPapers.add(expressen);
         newsPapers.add(aftonbladet);
         newsPapers.add(svd);
+        newsPapers.add(svd);
+        newsPapers.add(svd);
 
 
         return newsPapers;
