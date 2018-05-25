@@ -6,6 +6,11 @@ import "./styles.css";
 
 
 let destination = document.querySelector("#root");
+
+function getCurrentYear(){
+    let date = new Date();
+    return date.getFullYear();
+}
 class Content extends React.Component {
     constructor(props) {
         super(props);
@@ -61,6 +66,7 @@ class Content extends React.Component {
 
                     })}
                 </div>
+                <footer><p><strong><small>&copy; {getCurrentYear()} Henrik Olsson & Simon Pellijeff</small></strong></p></footer>
             </div>
 
         );
