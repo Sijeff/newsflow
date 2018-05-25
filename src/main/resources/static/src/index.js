@@ -45,7 +45,7 @@ class Content extends React.Component {
         return (
             <div className="content">
                 <div className="header">
-                    <h1 className="mainHeader">Nyhetsflöde</h1>
+                    <h1 className="mainHeader">Dagens.media</h1>
                 </div>
                 <div className="columns">
                     {this.state.newspapers.map(function (newspaper, i) {
