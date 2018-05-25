@@ -12,7 +12,6 @@ public class NewsPaper implements Observer, DisplayFeed {
     private String name;
     private List<Item> items;
     private Subject newsFeed;
-
     public NewsPaper(String url, Subject newsFeed) {
         newsFeed.registerObserver(this);
         this.url = url;

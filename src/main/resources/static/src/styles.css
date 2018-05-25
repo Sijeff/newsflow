@@ -3,38 +3,45 @@
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #8D8FDB;
+    height: 100%;
+    background-color: #97F0FF;
+}
+
+a {
+    color: #000;
 }
 
 .mainHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #8D8FDB;
+    background-color: #97F0FF;
     font-size: 3rem;
     position: relative;
     z-index: 10;
-    height: 100px;
+    height: 4vh;
     text-align: center;
 }
 
-.content {
+.columns {
     display: flex;
     overflow: hidden;
-    height: 100vh;
-    margin-top: -100px;
-    padding-top: 100px;
+    height: 83vh;
     position: relative;
     width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
+    top: 0;
+    bottom: 0;
 }
 
 .column {
@@ -43,9 +50,29 @@ html, body {
     padding: .5rem;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
-    width: 33vw;
+    width: 33.33vw;
 }
 
 .column::-webkit-scrollbar {
     display: none;
+}
+
+.feedName {
+    position: sticky;
+    top: 0px;
+    background-color: #97F0FF;
+}
+
+@media only screen and (max-width: 768px) {
+    .columns {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-points-x: repeat(300px);
+        scroll-snap-type: mandatory;
+    }
+    .column {
+        flex-shrink: 0;
+        width: 100vw;
+    }
 }
