@@ -5,7 +5,7 @@ class NewsItem extends Component {
         return (
             <article className="newsItem">
                 <a href={this.props.item.link}><h3>{this.props.item.title}</h3></a>
-                <section dangerouslySetInnerHTML={{ __html: this.props.item.description }}></section>
+                <p>{this.props.item.description}</p>
                 <p><time>{this.props.item.date}</time></p>
             </article>
         );
