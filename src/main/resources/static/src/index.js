@@ -31,40 +31,38 @@ class Content extends React.Component {
 
     render() {
         console.log(this.state.newsPaper);
-        let contentStyle = {
-            fontFamily: "monospace",
-        }
         let oddStyle = {
-            backgroundColor: '#8FB2CF',
+            backgroundColor: '#7DE8DA',
         }
         let evenStyle = {
-            backgroundColor: '#8DDBD5',
+            backgroundColor: '#7DBDE8',
         }
         return (
-            <div className="main">
+            <div className="content">
                 <div className="header">
                     <h1 className="mainHeader">Nyhetsflöde</h1>
-                    <div style={contentStyle} className="content">
-                        {this.state.newspapers.map(function (newspaper, i) {
-                            if(i % 2 === 0){
-                                return (
-                                    <div style={evenStyle} className="column" key={i}>
-                                        <NewsContainer newspaper={newspaper} key={i} />
-                                    </div>
-                                )
-                            } else {
-                                return (
-                                    <div style={oddStyle} className="column" key={i}>
-                                        <NewsContainer newspaper={newspaper} key={i} />
-                                    </div>
-                                )
-                            }
-                            
-                            
-                        })}
-                    </div>
+                </div>
+                <div className="columns">
+                    {this.state.newspapers.map(function (newspaper, i) {
+                        if (i % 2 === 0) {
+                            return (
+                                <div style={evenStyle} className="column" key={i}>
+                                    <NewsContainer newspaper={newspaper} key={i} />
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div style={oddStyle} className="column" key={i}>
+                                    <NewsContainer newspaper={newspaper} key={i} />
+                                </div>
+                            )
+                        }
+
+
+                    })}
                 </div>
             </div>
+
         );
     }
 }
