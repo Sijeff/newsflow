@@ -1,6 +1,5 @@
 package com.example.newsflow.RSSCommunication;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -97,7 +96,7 @@ public class RSSFeedParser {
                     if (event.asEndElement().getName().getLocalPart() == (ITEM)) {
                         Item message = new Item();
                         message.setAuthor(author);
-                        message.setDescription(description);
+                        message.setDescription(removeHtmlTags(description));
                         message.setGuid(guid);
                         message.setLink(link);
                         message.setTitle(title);
@@ -132,7 +131,16 @@ public class RSSFeedParser {
         }
     }
 
-    // TODO: 2018-05-25
-    //removeTagsAndImage() method for Description
+    private String removeHtmlTags(String description) {
+
+        String result = "";
+
+        result = description.replace("<p>", "");
+        result = result.replace("</p>", " ");
+        result = result.replaceAll("\\<.*?>","");
+
+        return result;
+
+    }
 
 }

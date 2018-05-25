@@ -34,7 +34,7 @@ public class NewsPaper implements Observer, DisplayFeed {
     @Override
     public void display() {
         for (Item item : items) {
-            System.out.println(item.getDate());
+            System.out.println(item.getDescription());
             System.out.println();
         }
     }
