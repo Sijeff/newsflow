@@ -4,37 +4,41 @@
 
 body {
     overflow-x: hidden;
-    overflow-y: hidden;
+    font-family: 'Nunito', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 html, body {
     padding: 0;
     margin: 0;
-    background-color: #8D8FDB;
+    background-color: #97F0FF;
+}
+
+a {
+    color: #000;
 }
 
 .mainHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #8D8FDB;
+    background-color: #97F0FF;
     font-size: 3rem;
     position: relative;
     z-index: 10;
-    height: 100px;
+    height: 10vh;
     text-align: center;
 }
 
-.content {
+.columns {
     display: flex;
     overflow: hidden;
-    height: 100vh;
-    margin-top: -100px;
-    padding-top: 100px;
+    height: 90vh;
     position: relative;
     width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
 }
 
 .column {
@@ -43,9 +47,16 @@ html, body {
     padding: .5rem;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
-    width: 33vw;
+    width: 33.33vw;
 }
 
 .column::-webkit-scrollbar {
     display: none;
 }
+
+.feedName {
+    position: fixed;
+    background-color: #97F0FF;
+    top: 16vh;
+}
+
