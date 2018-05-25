@@ -1,5 +1,7 @@
 package com.example.newsflow.RSSCommunication;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -130,4 +132,8 @@ public class RSSFeedParser {
             throw new RuntimeException(e);
         }
     }
+
+    // TODO: 2018-05-25
+    //removeTagsAndImage() method for Description
+
 }
