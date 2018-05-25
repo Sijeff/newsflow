@@ -60,3 +60,16 @@ a {
     top: 16vh;
 }
 
+@media only screen and (max-width: 768px) {
+    .columns {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-points-x: repeat(300px);
+        scroll-snap-type: mandatory;
+    }
+    .column {
+        flex-shrink: 0;
+        width: 100vw;
+    }
+}
