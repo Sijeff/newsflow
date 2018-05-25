@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow-x: auto;
+    overflow: hidden;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -30,14 +30,14 @@ a {
     font-size: 3rem;
     position: relative;
     z-index: 10;
-    height: 10vh;
+    height: 4vh;
     text-align: center;
 }
 
 .columns {
     display: flex;
     overflow: hidden;
-    height: 90vh;
+    height: 83vh;
     position: relative;
     width: 100%;
     top: 0;
