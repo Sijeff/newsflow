@@ -36,7 +36,6 @@ public class MainController {
         newsPapers.add(svd);
 
 
-
         return newsPapers;
     }
 
